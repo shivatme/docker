@@ -16,11 +16,13 @@
 
 -Install Docker
 -Clone the repository
+-Start a new network
+-docker network create my-network
 -Start db locally
--docker run -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+-docker run -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d --network my-network postgres
 -go to neon.tech and get db
 -Change the database url in .env file
--docker build -t week_27_docker_compose
+-docker build -network host -t week_27_docker_compose .
 -docker run -p 3000:3000 week_27_docker_compose
 
 ## Docker Compose Installation
